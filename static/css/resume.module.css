@@ -1,0 +1,277 @@
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titleRight {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    overflow: hidden;
+}
+
+
+.titleRight h4 {
+    margin: 10px 0;
+    font-size: 120%;
+    white-space: nowrap;
+}
+
+
+.description {
+    margin-top: 10px;
+}
+
+.section {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: rgba(0,0,0,0.7) 10px 10px 20px 15px;
+    margin-bottom: 60px;
+}
+
+.name {
+    text-align: center;
+    flex: 1;
+}
+
+.separator {
+    flex: 1
+}
+
+.techRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rotateContainer {
+    margin-top: 30px;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 1s;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background-color: #0b2e13;*/
+}
+
+.rotateContainer:hover {
+    transform: rotateY(180deg);
+}
+
+.frontImage {
+    transform: rotateY(0);
+    -webkit-backface-visibility: hidden;
+}
+
+.backImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(-180deg);
+    -webkit-backface-visibility: hidden;
+}
+
+.frontImage img {
+    height: 60px;
+}
+
+.flipOuterContainer {
+    perspective: 150px;
+    width: 20%;
+    min-width: 100px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.educationTitle {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.time {
+    color: #676767;
+}
+
+.resumeDetail {
+    margin: 30px;
+}
+
+.rowCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splitLine {
+    width: 80%;
+    height: 2px;
+    background-color: black;
+    margin: 30px;
+}
+
+.techNotPhone {
+
+}
+
+.techForPhone {
+    display: none;
+}
+
+/*iPad*/
+@media only screen and (max-width: 1367px) and (min-width: 767px) and (orientation : portrait) {
+    .rowToCol {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .rowToCol h4 {
+        font-size: 1rem;
+    }
+
+    .titleRight h4 {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 1367px) and (min-width: 767px) and (orientation : landscape) {
+    .titleRight h4 {
+        font-size: 90%;
+    }
+
+    .name {
+        font-size: 160%;
+    }
+
+    .time {
+        font-size: 1rem;
+    }
+}
+
+
+/*laptop*/
+@media screen
+and (min-device-width: 1368px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
+    .titleRight h4 {
+        font-size: 90%;
+    }
+
+    .time {
+        font-size: 1rem;
+    }
+}
+
+/*phone*/
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 767px)
+and (orientation: landscape) {
+    .col h5 {
+        font-size: 1rem;
+    }
+
+    .col h3 {
+        font-size: 1.5rem;
+    }
+
+    .resumeDetail h5 {
+        font-size: 1rem;
+    }
+
+    .time {
+        font-size: 1rem;
+    }
+
+    .rowToCol {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        overflow: scroll;
+    }
+
+    .titleRight {
+        margin-left: 0;
+    }
+
+    .titleRightRight {
+        margin-left: 15px;
+    }
+
+    .titleRight h4 {
+        font-size: 0.9rem;
+    }
+
+    .description {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 767px)
+and (orientation: portrait) {
+    .col h5 {
+        font-size: 1rem;
+    }
+
+    .col h3 {
+        font-size: 1.5rem;
+    }
+
+    .resumeDetail {
+        margin: 10px;
+    }
+
+    .resumeDetail h5 {
+        font-size: 1rem;
+    }
+
+    .time {
+        font-size: 1rem;
+    }
+
+    .techDescription {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .rowToCol {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        overflow: scroll;
+    }
+
+    .titleRight {
+        margin-left: 5px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .titleRight h4 {
+        font-size: 0.9rem;
+    }
+}

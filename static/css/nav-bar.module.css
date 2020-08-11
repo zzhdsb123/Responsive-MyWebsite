@@ -1,0 +1,138 @@
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(73, 73, 73, 0.7);
+    width: 100%;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    margin: 15px 10vw;
+    font-weight: bold;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.separator {
+    flex: 1;
+}
+
+.navContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-right: 3rem;
+}
+
+.link {
+    padding: 20px;
+    height: 100%;
+    color: white;
+    transition: background-color 0.5s;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+.link:active,
+.link:hover {
+    background-color: #999999;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.hamburger {
+    margin-right: 2rem;
+    width: 3.5rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    align-self: stretch;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*background-color: hotpink;*/
+}
+
+.line {
+    width: 100%;
+    height: 8px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.sidebar {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    /*transform: translateX(20px);*/
+}
+
+
+.sidebarLeft {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebarRight {
+    width: auto;
+    height: 100%;
+    background-color: rgba(66, 66, 66, 0.95);
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    justify-content: center;
+}
+
+.sidebarRight a {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebarRight a:hover,
+.sidebarRight a:active {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebarRight ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.sidebarRight ul li {
+    padding: 0 15px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+
+@media all and (max-width: 990px) {
+    .navContent {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
