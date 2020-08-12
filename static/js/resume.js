@@ -48,7 +48,9 @@ function ResumeAnimation(props) {
     }
     useEffect(() => {
         window.addEventListener("scroll", Listener)
+        return () => window.removeEventListener("scroll", Listener)
     }, [])
+
     const animateProps = useSpring({
         opacity: show ? 1 : 0,
         transform: show ? "translateX(0%)": "translateX(-50%)"

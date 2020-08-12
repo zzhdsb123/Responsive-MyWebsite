@@ -169,8 +169,7 @@
 /*laptop*/
 @media screen
 and (min-device-width: 1368px)
-and (max-device-width: 1600px)
-and (-webkit-min-device-pixel-ratio: 1) {
+and (max-device-width: 1600px) {
     .titleRight h4 {
         font-size: 90%;
     }
@@ -182,7 +181,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 /*phone*/
 @media only screen
-and (min-device-width: 375px)
+and (min-device-width: 0px)
 and (max-device-width: 767px)
 and (orientation: landscape) {
     .col h5 {
@@ -227,7 +226,7 @@ and (orientation: landscape) {
 }
 
 @media only screen
-and (min-device-width: 375px)
+and (min-device-width: 0px)
 and (max-device-width: 767px)
 and (orientation: portrait) {
     .col h5 {

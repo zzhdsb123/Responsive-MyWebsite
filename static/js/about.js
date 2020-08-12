@@ -2,9 +2,14 @@ import React from "react";
 import styles from "../css/about.module.css"
 import "../css/bootstrap/css/bootstrap.css"
 import Resume from "./resume";
+import { Link, Element } from "react-scroll";
 
 
 class About extends React.Component{
+    componentDidMount() {
+        window.scrollTo(0,0)
+    }
+
     render() {
         return (
             <div>
@@ -43,9 +48,14 @@ class About extends React.Component{
                                 For more details check out my full resume.
                             </h4>
                             <div className={styles.resumeButtonRow}>
-                                <a>
+                                <Link activeClass="active"
+                                      to="resume"
+                                      spy={true}
+                                      smooth={true}
+                                      duration={500}
+                                >
                                     <button type="button" className={`btn btn-dark ${styles.button}`}>View Online</button>
-                                </a>
+                                </Link>
                                 <a href={"/resume"}>
                                     <button type="button" className={`btn btn-dark ${styles.button}`}>Download</button>
                                 </a>
@@ -55,7 +65,8 @@ class About extends React.Component{
                     </div>
                 </div>
 
-                <Resume />
+                <Element name="resume"><Resume /></Element>
+
             </div>
 
         )

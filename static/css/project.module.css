@@ -1,0 +1,340 @@
+.main {
+    width: 65vw;
+    background-color: rgba(214, 214, 214, 0.7);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 15vh auto 80px;
+    animation: fade-in 1s;
+}
+
+.title {
+    margin-bottom: 60px;
+}
+
+.section {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: rgba(0,0,0,0.7) 10px 10px 20px 15px;
+    margin-bottom: 80px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.notateImageContainer {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.leftArrow {
+    position: absolute;
+    left: 5px;
+    top: 45%;
+    z-index: 2;
+}
+
+.rightArrow {
+    position: absolute;
+    right: 5px;
+    top: 45%;
+    z-index: 2;
+}
+
+.notateImageContainer svg {
+    transition: color 0.5s;
+    color: #aeaeae;
+}
+
+.notateImageContainer svg:hover {
+    color: #eeeeee;
+}
+
+.notateImage {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height:100%;
+}
+
+.projectDescription {
+    flex: 1;
+    margin: 30px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.linkButton {
+    width: 30%;
+    margin-top: 30px;
+}
+
+.btn {
+    width: 100%;
+}
+
+.switchBtn {
+    width: 45%;
+    white-space: nowrap;
+}
+
+.videoOuterContainer {
+    position: relative;
+    margin-top: 30px;
+    width: 450px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.singleButton {
+    width: 60%;
+}
+
+.myWebImg {
+    width: 500px;
+    height:280px;
+    overflow: hidden;
+}
+
+.myWebImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.lastSection {
+    margin-bottom: 20px;
+}
+
+@keyframes fade-in {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+
+/*laptop*/
+@media screen
+and (min-device-width: 1025px)
+and (max-device-width: 1600px)
+{
+    .main {
+        width: 80%;
+    }
+
+    .projectDescription h4 {
+        font-size: 1.5vw;
+    }
+}
+
+/*iPad*/
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+    .notateImageContainer {
+        position: relative;
+        width: 400px;
+        height: 700px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .separatorContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .separator {
+        width: 100%;
+        height: 2px;
+        background-color: black;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .main {
+        width: 85%;
+    }
+
+    .projectDescription h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+    .main {
+        width: 95%
+    }
+
+
+    .projectDescription h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/*phone*/
+@media only screen
+and (min-device-width: 0px)
+and (max-device-width: 767px)
+and (orientation: portrait) {
+    .videoOuterContainer {
+        width: 75vw;
+        height: 40vh;
+    }
+
+    .separatorContainer {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .separator {
+        width: 100%;
+        height: 2px;
+        background-color: black;
+    }
+
+    .notateImageContainer {
+        margin-top: 20px;
+    }
+
+    .links {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .linkButton {
+        width: 60%;
+    }
+
+    .main {
+        width: 95%;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .section {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 40px;
+        padding: 5px;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section h4 {
+        font-size: 1rem;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .linksTwo {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .switchBtn {
+        width: 49%;
+        font-size: 0.8rem;
+    }
+
+    .myWebImg {
+        width: 95%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen
+and (min-device-width: 0px)
+and (max-device-width: 767px)
+and (orientation: landscape) {
+    .col {
+        flex-direction: column;
+    }
+
+    .linkButton {
+        width: 32%;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .projectDescription {
+        margin-right: 0;
+    }
+
+    .notateImageContainer {
+        position: relative;
+        width: 250px;
+        height: 500px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .separatorContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .separator {
+        width: 100%;
+        height: 2px;
+        background-color: black;
+    }
+
+
+    .main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .projectDescription h4 {
+        font-size: 1.2rem;
+    }
+
+    .section {
+        padding: 10px;
+    }
+}
