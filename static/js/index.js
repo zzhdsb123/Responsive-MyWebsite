@@ -5,6 +5,7 @@ import { BrowserRouter as BR, Switch, Route } from "react-router-dom";
 import Home from "./home";
 import About from "./about";
 import Project from "./project";
+import Contact from "./contact";
 
 
 class Index extends React.Component {
@@ -22,6 +23,9 @@ class Index extends React.Component {
                         </Route>
                         <Route path="/project" exact>
                             <Project />
+                        </Route>
+                        <Route path="/contact" exact>
+                            <Contact />
                         </Route>
                     </Switch>
                 </div>
