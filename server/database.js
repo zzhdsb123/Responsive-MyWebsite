@@ -54,7 +54,7 @@ function insertIP(address, callback) {
 
                         let lastTime = result[0].date.split(":").pop(),
                             time = date.split(":").pop()
-                        if (time-lastTime <= 5 || time - lastTime >= 55) {
+                        if (time-lastTime <= 5 || lastTime - time >= 55) {
                             callback(null, null)
                             con.end()
                         }
