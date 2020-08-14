@@ -24,7 +24,14 @@ module.exports = function (app, path, database) {
     })
 
     app.get("*", function (req, res) {
-        console.log(req.connection.remoteAddress)
+        let address = req.connection.remoteAddress
+        const addressList = address.split(":")
+        address = addressList.pop()
+        database.insertIP(address, function (err, result) {
+            if (err) {
+                console.log(err)
+            }
+        })
         res.sendFile(path.join(__dirname, '..', 'static', 'html', 'index.html'))
     })
 }
