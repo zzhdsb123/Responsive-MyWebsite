@@ -12,7 +12,7 @@ function SideBarContent(props) {
                 <li><Link to={"about"} onClick={props.click}>About me</Link></li>
                 <li><Link to={"project"} onClick={props.click}>My Projects</Link></li>
                 <li><Link to={"contact"} onClick={props.click}>Contact</Link></li>
-                <li>Message Board</li>
+                {/*<li>Message Board</li>*/}
             </ul>
         </div>
     )
@@ -73,7 +73,7 @@ class NavBar extends React.Component {
                         <Link to="about" className={styles.link}>About me</Link>
                         <Link to="project" className={styles.link}>My Projects</Link>
                         <Link to="contact" className={styles.link}>Contact</Link>
-                        <Link to="/" className={styles.link}>Message Board</Link>
+                        {/*<Link to="/" className={styles.link}>Message Board</Link>*/}
                     </div>
                     <div className={styles.hamburger} onClick={this.showSideBar}>
                         <div className={styles.line}/>

@@ -24,6 +24,7 @@ module.exports = function (app, path, database) {
     })
 
     app.get("*", function (req, res) {
+        console.log(req.connection.remoteAddress)
         res.sendFile(path.join(__dirname, '..', 'static', 'html', 'index.html'))
     })
 }
