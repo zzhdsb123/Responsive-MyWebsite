@@ -44,14 +44,13 @@ function insertIP(address, callback) {
             let today = new Date()
             let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+' '+today.getHours()+':'+today.getMinutes()
 
-            let sql = `select ip.ID, ip.address, ip.date from myweb.ip where ip.address = ${address} order by ip.ID desc limit 1`
+            let sql = `select ip.ID, ip.address, ip.date from myweb.ip where ip.address = "${address}" order by ip.ID desc limit 1`
             con.query(sql, function (err, result) {
-                if (err){
+                if (err) {
                     callback(err, null)
                 }
                 else {
                     if (result.length !== 0) {
-                        console.log("shit")
 
                         let lastTime = result[0].date.split(":").pop(),
                             time = date.split(":").pop()
