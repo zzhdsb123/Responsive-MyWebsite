@@ -1,0 +1,15 @@
+
+app.js
+err.out
+log.out
+log.txt
+node_modules
+package-lock.json
+package.json
+server
+static
+webpack.config.js
+Server running on 172.31.47.123:8080
+table created!
+IP table created!
+[1]+ sudo node app.js &
