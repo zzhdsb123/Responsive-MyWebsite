@@ -201,7 +201,7 @@ class Contact extends React.Component {
             this.state.afterSubmit ? <AfterSubmit message={this.state.submitMessage}/> :
             <div className={styles.main}>
                 <div className={styles.row}>
-                    <h2>Contact Jack</h2>
+                    <h2>Contact Me</h2>
                 </div>
                 <div className={styles.row}>
                     <form className={styles.form}>

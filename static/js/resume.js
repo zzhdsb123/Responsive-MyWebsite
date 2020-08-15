@@ -75,14 +75,12 @@ class Resume extends React.Component {
                             <h4>Phone</h4>
                             <h4>Email</h4>
                             <h4>Address</h4>
-                            <h4>Website</h4>
                             <h4>Github</h4>
                         </div>
                         <div className={styles.titleRight + ' ' + styles.titleRightRight}>
                             <h4>416-388-4930</h4>
                             <h4>zhangye.zhang@mail.utoronto.ca</h4>
                             <h4>169p Finch Ave E, Toronto, ON, M2N 4R8</h4>
-                            <h4>ec2-18-191-198-30.us-east-2.compute.amazonaws.com</h4>
                             <h4>github.com/zzhdsb123</h4>
                         </div>
                     </div>
