@@ -12,6 +12,6 @@ router(app, path, database)
 app.use(router)
 app.listen('80', function () {
     require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-        console.log(`Server running on ${add}:80`);
+        console.log(`Server running on ${add}:8080`);
     })
 })

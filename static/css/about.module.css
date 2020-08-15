@@ -144,7 +144,7 @@ and (orientation : landscape) {
 
 /*phone*/
 @media only screen
-and (min-device-width: 375px)
+and (min-device-width: 0px)
 and (max-device-width: 767px)
 and (orientation: portrait) {
     .row {
@@ -179,7 +179,7 @@ and (orientation: portrait) {
 }
 
 @media only screen
-and (min-device-width: 375px)
+and (min-device-width: 0px)
 and (max-device-width: 767px)
 and (orientation: landscape) {
     .main {
