@@ -35,6 +35,7 @@ function insertMessage(message, name, email, callback) {
 }
 
 function insertIP(address, location, callback) {
+    console.log(location)
     connect()
     con.connect(function (err) {
         if (err){
