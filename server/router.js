@@ -35,6 +35,7 @@ module.exports = function (app, path, database, fetch) {
                     // console.log(`${data.country} ${data.regionName} ${data.city}`)
                     location = `${data.country} ${data.regionName} ${data.city}`
                 }
+                console.log(location)
                 database.insertIP(address, location, function (err, result) {
                     if (err) {
                         console.log(err)
