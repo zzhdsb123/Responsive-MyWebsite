@@ -66,7 +66,7 @@ class NavBar extends React.Component {
                     <SideBar show={this.state.sideBar} hideSideBar={this.hideSideBar}/>
                     <Link to="/">
                         <div className={styles.logo}>
-                            Jack Chang
+                            Jack Zhang
                         </div>
                     </Link>
 
