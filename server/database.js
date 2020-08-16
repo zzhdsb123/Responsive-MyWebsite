@@ -35,7 +35,6 @@ function insertMessage(message, name, email, callback) {
 }
 
 function insertIP(address, location, callback) {
-    console.log(location)
     connect()
     con.connect(function (err) {
         if (err){
@@ -60,6 +59,7 @@ function insertIP(address, location, callback) {
                         }
                         else {
                             sql = `insert into ip (address, date, location) values ("${address}", "${date}", "${location}")`
+                            console.log(sql)
                             con.query(sql, function (err, result) {
                                 if (err) {
                                     callback(err, null)
