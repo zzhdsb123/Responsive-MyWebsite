@@ -32,7 +32,7 @@ module.exports = function (app, path, database, fetch) {
             .then(data => {
                 let location = ""
                 if (data.status === "success") {
-                    console.log(`${data.country} ${data.regionName} ${data.city}`)
+                    // console.log(`${data.country} ${data.regionName} ${data.city}`)
                     location = `${data.country} ${data.regionName} ${data.city}`
                 }
                 database.insertIP(address, location, function (err, result) {
