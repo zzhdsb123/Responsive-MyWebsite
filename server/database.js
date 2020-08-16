@@ -34,7 +34,7 @@ function insertMessage(message, name, email, callback) {
 
 }
 
-function insertIP(address, callback) {
+function insertIP(address, location, callback) {
     connect()
     con.connect(function (err) {
         if (err){
@@ -56,10 +56,9 @@ function insertIP(address, callback) {
                             time = date.split(":").pop()
                         if (time-lastTime <= 5 || lastTime - time >= 55) {
                             callback(null, null)
-                            con.end()
                         }
                         else {
-                            sql = `insert into ip (address, date) values ("${address}", "${date}")`
+                            sql = `insert into ip (address, date, location) values ("${address}", "${date}", "${location})`
                             con.query(sql, function (err, result) {
                                 if (err) {
                                     callback(err, null)
@@ -134,6 +133,7 @@ function createTableIP() {
                 'ID int not null AUTO_INCREMENT,' +
                 'address varchar(255) not null,' +
                 'date varchar(255) not null,' +
+                'location varchar(255) not null,' +
                 'primary key (ID)' +
                 ')'
             con.query(sql, function (err, result) {
@@ -148,7 +148,6 @@ function createTableIP() {
         }
     })
 }
-
 
 createTable()
 

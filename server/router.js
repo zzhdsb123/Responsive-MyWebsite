@@ -1,4 +1,4 @@
-module.exports = function (app, path, database) {
+module.exports = function (app, path, database, fetch) {
     app.post("/post/contact", function (req, res) {
         database.insertMessage(req.body.content, req.body.name, req.body.email, function (err, result) {
             if (err) {
@@ -27,11 +27,20 @@ module.exports = function (app, path, database) {
         let address = req.connection.remoteAddress
         const addressList = address.split(":")
         address = addressList.pop()
-        database.insertIP(address, function (err, result) {
-            if (err) {
-                console.log(err)
-            }
-        })
+        fetch(`http://ip-api.com/json/${address}`)
+            .then(response => response.json())
+            .then(data => {
+                let location = " "
+                if (data.status === "success") {
+                    location = `${data.country} ${data.regionName} ${data.city}`
+                }
+                database.insertIP(address, location, function (err, result) {
+                    if (err) {
+                        console.log(err)
+                    }
+                })
+            })
+
         res.sendFile(path.join(__dirname, '..', 'static', 'html', 'index.html'))
     })
 }
