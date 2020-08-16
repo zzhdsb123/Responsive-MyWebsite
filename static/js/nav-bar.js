@@ -64,9 +64,12 @@ class NavBar extends React.Component {
             <div>
                 <div className={styles.main}>
                     <SideBar show={this.state.sideBar} hideSideBar={this.hideSideBar}/>
-                    <div className={styles.logo}>
-                        Jack Chang
-                    </div>
+                    <Link to="/">
+                        <div className={styles.logo}>
+                            Jack Chang
+                        </div>
+                    </Link>
+
                     <div className={styles.separator}/>
                     <div className={styles.navContent}>
                         <Link to="/" className={styles.link}>Home</Link>
