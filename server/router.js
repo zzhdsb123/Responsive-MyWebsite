@@ -30,9 +30,8 @@ module.exports = function (app, path, database, fetch) {
         fetch(`http://ip-api.com/json/${address}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
-                let location = " "
                 if (data.status === "success") {
+                    console.log(data)
                     location = `${data.country} ${data.regionName} ${data.city}`
                 }
                 database.insertIP(address, location, function (err, result) {
