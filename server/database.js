@@ -58,7 +58,7 @@ function insertIP(address, location, callback) {
                             callback(null, null)
                         }
                         else {
-                            sql = `insert into ip (address, date, location) values ("${address}", "${date}", "${location})`
+                            sql = `insert into ip (address, date, location) values ("${address}", "${date}", "${location}")`
                             con.query(sql, function (err, result) {
                                 if (err) {
                                     callback(err, null)
