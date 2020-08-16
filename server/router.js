@@ -30,6 +30,7 @@ module.exports = function (app, path, database, fetch) {
         fetch(`http://ip-api.com/json/${address}`)
             .then(response => response.json())
             .then(data => {
+                console.log(data)
                 let location = " "
                 if (data.status === "success") {
                     location = `${data.country} ${data.regionName} ${data.city}`
