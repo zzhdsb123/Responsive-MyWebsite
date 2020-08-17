@@ -1,4 +1,13 @@
 module.exports = function (app, path, database, fetch) {
+
+    app.get("/webImageSample", function (req, res) {
+        res.sendFile(path.join(__dirname, '..', 'static', 'files', 'myweb.png'))
+    })
+
+    app.get("/resume", function (req, res) {
+        res.sendFile(path.join(__dirname, '..', 'static', 'files', 'resume.pdf'))
+    })
+
     app.post("/post/contact", function (req, res) {
         database.insertMessage(req.body.content, req.body.name, req.body.email, function (err, result) {
             if (err) {
@@ -13,14 +22,6 @@ module.exports = function (app, path, database, fetch) {
                 })
             }
         })
-    })
-
-    app.get("/webImageSample", function (req, res) {
-        res.sendFile(path.join(__dirname, '..', 'static', 'files', 'myweb.png'))
-    })
-
-    app.get("/resume", function (req, res) {
-        res.sendFile(path.join(__dirname, '..', 'static', 'files', 'resume.pdf'))
     })
 
     app.get("*", function (req, res) {
