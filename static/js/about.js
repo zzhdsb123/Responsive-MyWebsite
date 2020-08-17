@@ -3,6 +3,7 @@ import styles from "../css/about.module.css"
 import "../css/bootstrap/css/bootstrap.css"
 import Resume from "./resume";
 import { Link, Element } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 
 
 class About extends React.Component{
@@ -56,7 +57,7 @@ class About extends React.Component{
                                 >
                                     <button type="button" className={`btn btn-dark ${styles.button}`}>View Online</button>
                                 </Link>
-                                <a href="/resume">
+                                <a href={"../files/Resume.pdf"}>
                                     <button type="button" className={`btn btn-dark ${styles.button}`}>Download</button>
                                 </a>
                             </div>
