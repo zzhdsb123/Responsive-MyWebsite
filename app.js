@@ -10,7 +10,7 @@ const express = require('express'),
 app.use(express.static(__dirname + `/static`))
 app.use(bodyParser.json())
 router(app, path, database, fetch)
-app.use(router)
+app.use("/", router)
 app.listen('8080', function () {
     require('dns').lookup(require('os').hostname(), function (err, add, fam) {
         console.log(`Server running on ${add}:8080`);
