@@ -5,8 +5,8 @@ import Resume from "./resume";
 import { Link, Element } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 
+class About extends React.Component {
 
-class About extends React.Component{
     componentDidMount() {
         window.scrollTo(0,0)
     }
@@ -73,6 +73,5 @@ class About extends React.Component{
         )
     }
 }
-
 
 export default About

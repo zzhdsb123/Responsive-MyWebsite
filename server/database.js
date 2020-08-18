@@ -27,7 +27,6 @@ function insertMessage(message, name, email, callback) {
                 else{
                     callback(null, result)
                 }
-                con.end()
             })
         }
     })
@@ -37,13 +36,13 @@ function insertMessage(message, name, email, callback) {
 function insertIP(address, location, callback) {
     connect()
     con.connect(function (err) {
-        if (err){
+        if (err) {
             console.log(err)
+
         }
         else {
             let today = new Date()
             let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+' '+today.getHours()+':'+today.getMinutes()
-
             let sql = `select ip.ID, ip.address, ip.date from myweb.ip where ip.address = "${address}" order by ip.ID desc limit 1`
             con.query(sql, function (err, result) {
                 if (err) {
@@ -64,10 +63,9 @@ function insertIP(address, location, callback) {
                                 if (err) {
                                     callback(err, null)
                                 }
-                                else{
+                                else {
                                     callback(null, result)
                                 }
-                                con.end()
                             })
                         }
 
@@ -81,7 +79,6 @@ function insertIP(address, location, callback) {
                             else{
                                 callback(null, result)
                             }
-                            con.end()
                         })
                     }
 

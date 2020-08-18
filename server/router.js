@@ -1,4 +1,5 @@
 module.exports = function (app, path, database, fetch) {
+    const fetchTimeout = require('fetch-timeout')
 
     app.get("/webImageSample", function (req, res) {
         res.sendFile(path.join(__dirname, '..', 'static', 'files', 'myweb.png'))
@@ -28,21 +29,41 @@ module.exports = function (app, path, database, fetch) {
         let address = req.connection.remoteAddress
         const addressList = address.split(":")
         address = addressList.pop()
-        fetch(`http://ip-api.com/json/${address}`)
-            .then(response => response.json())
+        fetchTimeout(`http://ip-api.com/json/${address}`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        }, 1000, 'My custom timeout error string')
+            .then(function(res) {
+                if (res.status !== 200) {
+                    console.log("ERR!")
+                } else {
+                    return res.json();
+                }
+            })
             .then(data => {
+
                 let location = ""
                 if (data.status === "success") {
                     // console.log(`${data.country} ${data.regionName} ${data.city}`)
                     location = `${data.country} ${data.regionName} ${data.city}`
+
                 }
                 database.insertIP(address, location, function (err, result) {
                     if (err) {
                         console.log(err)
                     }
+
                 })
             })
-
+            .catch(function(err) {
+                console.log("error", err);
+            })
         res.sendFile(path.join(__dirname, '..', 'static', 'html', 'index.html'))
+
+
     })
+
 }
